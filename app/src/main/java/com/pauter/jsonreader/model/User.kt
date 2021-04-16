@@ -1,3 +1,3 @@
 package com.pauter.jsonreader.model
 
-data class User(var name: String, var email: String)
+data class User(val id: Int, val name: String, val email: String)

@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JSONreader">
-        <activity android:name=".CommentsActivity"></activity>
-        <activity android:name=".TasksPostsActivity" />
+        <activity android:name=".TasksPostsActivity"></activity>
+        <activity android:name=".CommentsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

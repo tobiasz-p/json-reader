@@ -14,8 +14,6 @@ import java.net.URL
 class MainActivity : AppCompatActivity(), UsersRecyclerAdapter.OnItemClickListener {
     private lateinit var usersList: ArrayList<User>
     private lateinit var recyclerViewUsers: RecyclerView
-    private lateinit var listUsers: MutableList<User>
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +38,11 @@ class MainActivity : AppCompatActivity(), UsersRecyclerAdapter.OnItemClickListen
 
     override fun onItemClick(position: Int) {
         Toast.makeText(this, "User $position clicked", Toast.LENGTH_SHORT).show()
-        val clickedItem = usersList[position]
-        val intentTasksPosts = Intent(this, TasksPostsActivity::class.java)
+        val clickedItemId = usersList[position].id
+        val TasksPostsIntent = Intent(this, TasksPostsActivity::class.java)
+        TasksPostsIntent.putExtra("id", clickedItemId.toString())
         recyclerViewUsers.adapter?.notifyItemChanged(position)
-        startActivity(intentTasksPosts)
+        startActivity(TasksPostsIntent)
     }
 
     private fun initViews() {
@@ -52,17 +51,11 @@ class MainActivity : AppCompatActivity(), UsersRecyclerAdapter.OnItemClickListen
 
 
     private fun initObjects() {
-        listUsers = ArrayList()
-        val usersRecyclerAdapter = UsersRecyclerAdapter(listUsers, this)
-
+        val usersRecyclerAdapter = UsersRecyclerAdapter(usersList, this)
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerViewUsers.layoutManager = mLayoutManager
         recyclerViewUsers.itemAnimator = DefaultItemAnimator()
         recyclerViewUsers.setHasFixedSize(true)
         recyclerViewUsers.adapter = usersRecyclerAdapter
-
-        listUsers.clear()
-        listUsers.addAll(usersList)
-
     }
 }
