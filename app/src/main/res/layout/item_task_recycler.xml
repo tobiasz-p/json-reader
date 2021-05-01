@@ -11,18 +11,20 @@
         android:padding="16dp">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textViewName"
+                android:id="@+id/textViewTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hint_name"
-                android:textColor="@android:color/darker_gray" />
+                android:text="Title"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                />
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/textViewPoints"
+                android:id="@+id/textViewCompleted"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hint_password"
+                android:text="isCompleted"
                 android:textColor="@android:color/darker_gray" />
 
     </LinearLayout>

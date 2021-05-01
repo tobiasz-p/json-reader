@@ -37,8 +37,8 @@ class PostsRecyclerAdapter(
     inner class PostsViewHolder(view: View) : RecyclerView.ViewHolder(view),
             View.OnClickListener{
 
-        val textViewTitle: AppCompatTextView = view.findViewById(R.id.textViewName) as AppCompatTextView
-        val textViewBody: AppCompatTextView = view.findViewById(R.id.textViewPoints) as AppCompatTextView
+        val textViewTitle: AppCompatTextView = view.findViewById(R.id.textViewTitle)
+        val textViewBody: AppCompatTextView = view.findViewById(R.id.textViewBody)
 
         init {
             view.setOnClickListener(this)

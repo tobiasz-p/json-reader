@@ -1,39 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".TasksPostsActivity">
 
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:padding="25dp">
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-thin"
-            android:padding="20dp"
-            android:text="Lista postów"
-            android:textAlignment="center"
-            android:textColor="@color/purple_700"
-            android:textSize="32dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-           <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTasksPosts"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
-        <Button
-            android:id="@+id/returnButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Powrót" />
-
-    </LinearLayout>
+            <TextView
+                android:id="@+id/titleTasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textColor="@color/purple_700"
+                android:fontFamily="sans-serif-thin"
+                android:text="Zadania"
+                android:textAlignment="center"
+                android:textSize="32dp" />
 
 
-</LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/taskRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                app:layoutManager="LinearLayoutManager" >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/titlePosts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textColor="@color/purple_700"
+                android:fontFamily="sans-serif-thin"
+                android:text="Posty"
+                android:textAlignment="center"
+                android:textSize="32dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/postRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                app:layoutManager="LinearLayoutManager" />
+
+            <Button
+                android:id="@+id/returnButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Powrót" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
